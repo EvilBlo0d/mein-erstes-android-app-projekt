@@ -8,6 +8,10 @@ Dies ist meine erstes Android-App, erstellt mit Andoid Studio, Kotlin und Jetpac
 - Anzeige von Datum und Uhrzeit
 - Button mit Klickzähler
 
+## Screenshot
+
+![Startscreen](screenshots/startscreen.png)
+
 ## Technologien
 
 - Kotlin
