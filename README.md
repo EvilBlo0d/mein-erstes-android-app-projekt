@@ -10,7 +10,7 @@ Dies ist meine erstes Android-App, erstellt mit Andoid Studio, Kotlin und Jetpac
 
 ## Screenshot
 
-![Startscreen](screenshots/startscreen.png)
+![Startscreen](screenshots/startscreen_new.png)
 
 ## Technologien
 
