@@ -52,6 +52,17 @@ class MainActivity : ComponentActivity() {
 fun StartScreen(modifier: Modifier = Modifier) {
     var name by remember { mutableStateOf(TextFieldValue("")) }
     var buttonClicks by remember { mutableIntStateOf(0) }
+    var dailyMessage by remember {
+        mutableStateOf("Drücke den Button für deine Tagesnachricht.")
+    }
+
+    val messages = listOf(
+        "Heute ist ein guter Tag zum Lernen.",
+        "Kleine Schritte bringen dich weiter.",
+        "Du baust gerade deine erste eigene App.",
+        "GitHub wird mit jedem Commit vertrauter.",
+        "Weiter so, das sieht schon richtig gut aus."
+    )
 
     val displayName = if (name.text.isBlank()){
         "Gast"
@@ -90,6 +101,8 @@ fun StartScreen(modifier: Modifier = Modifier) {
             modifier = Modifier.fillMaxWidth()
         )
 
+        Spacer(modifier = Modifier.height(16.dp))
+
         Text(
             text = "$currentDateTime",
             style = MaterialTheme.typography.bodyLarge
@@ -97,12 +110,20 @@ fun StartScreen(modifier: Modifier = Modifier) {
 
         Spacer(modifier = Modifier.height(24.dp))
 
+        Text(
+            text = dailyMessage,
+            style = MaterialTheme.typography.bodyLarge
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
         Button(
             onClick = {
                 buttonClicks++
+                dailyMessage = messages.random()
             }
         ) {
-            Text(text = "Klick mich")
+            Text(text = "Neue Nachricht")
         }
 
         Spacer(modifier = Modifier.height(16.dp))
