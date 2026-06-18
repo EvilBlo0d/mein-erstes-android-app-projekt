@@ -40,7 +40,6 @@ class MainActivity : ComponentActivity() {
             MeinErstesAppProjektTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     StartScreen(
-                        name = "Lukas",
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -50,7 +49,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun StartScreen(name: String, modifier: Modifier = Modifier) {
+fun StartScreen(modifier: Modifier = Modifier) {
     var name by remember { mutableStateOf(TextFieldValue("")) }
     var buttonClicks by remember { mutableIntStateOf(0) }
 
@@ -119,6 +118,6 @@ fun StartScreen(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun StartScreenPreview() {
     MeinErstesAppProjektTheme {
-        StartScreen(name = "Lukas")
+        StartScreen()
     }
 }
